@@ -31,9 +31,10 @@ while True:
 
     elif opcao.lower() == "s":
                 
-        if numero_saques <= LIMITE_SAQUES:
+        if numero_saques <= LIMITE_SAQUES-1:
             print("Saque")
             valor_saque = float(input("qual o valor do saque? \n"))
+            
             if valor_saque > saldo:
                 print("Saldo insuficiente")
             elif valor_saque <= limite:
@@ -43,6 +44,7 @@ while True:
                 numero_saques += 1
             else:
                 print("valor de saque muito alto")
+        
         else:
             print("número de saques atingidos")
 
@@ -51,7 +53,7 @@ while True:
     elif opcao.lower() == "e":
         print("-------------- Extrato --------------")
         print(extrato)        
-        print("----------------------------")
+        
         print(f" Seu saldo é de R${saldo} ")
 
     elif opcao.lower() == "q":
